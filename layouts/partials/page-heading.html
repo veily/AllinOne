@@ -2,6 +2,15 @@
   {{ if .Params.heading }}
       {{ .Params.heading }}
   {{ else }}
-      {{ .Title }}
+
+      {{ if eq .Title "Categories" }} 
+          分类
+      {{else if eq .Title "Tags"}}
+          标签
+      {{else if eq .Title "Series"}}
+          推荐系列
+      {{else}}
+          {{ .Title }}
+      {{end}}
   {{ end }}
 </div>

@@ -24,10 +24,10 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto ">
           <li class="nav-item {{ if eq $url "/" }} active {{ end }}">
-            <a class="nav-link" href="{{ .Site.BaseURL }}">Home{{ if eq $url "/" }} <span class="sr-only">(current)</span>{{ end }}</a>
+            <a class="nav-link" href="{{ .Site.BaseURL }}">首页{{ if eq $url "/" }} <span class="sr-only">(current)</span>{{ end }}</a>
           </li>
           {{ range .Site.Menus.main }}   
-            <li class="nav-item {{ if eq $type (substr .URL 1 -1) }} active {{ end }}">
+            <li class="nav-item {{ if eq $type (substr .URL 0 -1) }} active {{ end }}">
               <a class="nav-link" href="{{ .URL | absURL }}" >{{ .Name }} {{ if eq $type (substr .URL 1 -1) }} <span class="sr-only">(current)</span>{{ end }} </a>
             </li>
           
